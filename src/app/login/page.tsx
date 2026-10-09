@@ -93,6 +93,13 @@ export default function LoginPage() {
                 {isPending ? 'Signing in...' : 'Sign in'}
               </button>
             </div>
+            
+            <div className="mt-4 text-center text-sm">
+              <span className="text-gray-600">Don't have an account? </span>
+              <Link href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                Register your business
+              </Link>
+            </div>
           </form>
         </div>
       </div>

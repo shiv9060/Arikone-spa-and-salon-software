@@ -254,8 +254,8 @@ export async function createInvoice(tenantId: string, userId: string, data: Crea
             appliedDiscountAmount: appliedOffer?.discountAmount || null,
             invoiceItems: {
               create: computedItems.map((ci, idx) => ({
-                serviceId: calculationInput[idx].serviceId,
-                productId: calculationInput[idx].productId,
+                serviceId: calculationInput[idx].serviceId || null,
+                productId: calculationInput[idx].productId || null,
                 serviceName: calculationInput[idx].serviceName,
                 quantity: ci.quantity,
                 unitPrice: ci.unitPrice,
@@ -263,7 +263,7 @@ export async function createInvoice(tenantId: string, userId: string, data: Crea
                 taxPercent: ci.taxPercent,
                 taxAmount: ci.taxAmount,
                 total: ci.total,
-                appliedCustomerPackageId: calculationInput[idx].appliedCustomerPackageId
+                appliedCustomerPackageId: calculationInput[idx].appliedCustomerPackageId || null
               }))
             }
           }

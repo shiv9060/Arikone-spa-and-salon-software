@@ -21,15 +21,12 @@ export function UserMenu({
 
   return (
     <DropdownMenu>
-      {/* @ts-expect-error - asChild type issue */}
-      <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
-          <Avatar className="h-8 w-8 border border-gray-200">
-            <AvatarFallback className="bg-indigo-50 text-indigo-700 text-xs font-medium">
-              {initials}
-            </AvatarFallback>
-          </Avatar>
-        </button>
+      <DropdownMenuTrigger className="flex items-center gap-2 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-indigo-500">
+        <Avatar className="h-8 w-8 border border-gray-200">
+          <AvatarFallback className="bg-indigo-50 text-indigo-700 text-xs font-medium">
+            {initials}
+          </AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="font-normal">
